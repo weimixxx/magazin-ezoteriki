@@ -10,7 +10,7 @@ bot = telebot.TeleBot("8571225589:AAGYoGXFltAJC3P21NorXUxcQ7anH05nuXM")
 @bot.message_handler(["menu"])
 def menu(msg:Message):
     kb = telebot.types.ReplyKeyboardMarkup(True, False)
-    kb.row("Магический шар", "Книга «Гадаем на кофейной гуще»")
+    kb.row("Магический шар", "Книга «Гадаем на кофеиновой гуще»")
     kb.row("Хрустальный шар", "Руны")
     bot.send_message(msg.chat.id, text.menu, reply_markup=kb)
     bot.register_next_step_handler(msg, register_choice)
@@ -20,7 +20,7 @@ def menu(msg:Message):
 @bot.message_handler(["start"])
 def start(msg:Message):
     kb = telebot.types.ReplyKeyboardMarkup(True, False)
-    kb.row("Магический шар", "Книга «Гадаем на кофейной гуще»")
+    kb.row("Магический шар", "Книга «Гадаем на кофеиновой гуще»")
     kb.row("Хрустальный шар", "Руны")
     bot.send_message(msg.chat.id, text.start, reply_markup= kb)
     bot.register_next_step_handler(msg, register_choice)
@@ -32,11 +32,11 @@ def register_choice(msg: Message):
         book_coffe(msg)
     if msg.text == "Хрустальный шар":
         glass_square(msg)
-    if msg.text == "Руны":
+    if msg.text == "Руины":
         rune(msg)
 
 def magic_square(msg: Message):
-    bot.send_message(msg.chat.id, "Ты выбрал: магический шар! \nзадай ему вопрос!")
+    bot.send_message(msg.chat.id, "Ты выбрал: магический шар! \nзадай ему какой нибудь вопрос!")
     bot.register_next_step_handler(msg, confirm, "magic_shar")
 
 def book_coffe(msg: Message):
@@ -50,9 +50,9 @@ def glass_square(msg: Message):
 
     kb1 = telebot.types.ReplyKeyboardMarkup()
     kb1.row("Случайное предсказание")
-    kb1.row("Секретная предсказание(шанс 10%)")
+    kb1.row("Секретная предсказание(шанс 15%)")
 
-    if random.randint(1, 100) <= 10:
+    if random.randint(1, 100) <= 15:
         bot.send_message(msg.chat.id, "ты выбрал: Стклаянный шар\nОбратись к шару, то бы он заработал(нажми на кнопку)", reply_markup=kb1)
         bot.register_next_step_handler(msg, confirm, action = "glass_square1")
     else:
