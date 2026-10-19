@@ -62,7 +62,7 @@ def glass_square(msg: Message):
 def rune(msg: Message):
     photo = open("img.png", "rb")
     kb = InlineKeyboardMarkup()
-    kb.row(IB("Камень Ньютона", callback_data=f"Newtone|{msg.from_user.username}"), IB("камень бейсика", callback_data=f"basik|{msg.from_user.username}"), IB("сила меньшего", callback_data=f"silla_nemshego|{msg.from_user.username}"))
+    kb.row(IB("Камень Ньютончика", callback_data=f"Newtone|{msg.from_user.username}"), IB("камень бейсика", callback_data=f"basik|{msg.from_user.username}"), IB("сила меньшего", callback_data=f"silla_nemshego|{msg.from_user.username}"))
     kb.row(IB("Камень икс", callback_data=f"sila_x|{msg.from_user.username}"), IB("камень моста", callback_data=f"most|{msg.from_user.username}"), IB("камень молний", callback_data=f'flash|{msg.from_user.username}'))
     bot.send_photo(msg.chat.id, photo ,caption="Ты выбрал Руны! \n Выбери свою руну для покупки и узнай правду о себе)", reply_markup=kb)
 
