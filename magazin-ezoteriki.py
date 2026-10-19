@@ -99,7 +99,7 @@ def confirm(msg:Message, action):
     if  action == "magic_shar":
         list_slov = random.choice(text.magic_square_list)
         bot.send_message(msg.chat.id, f"Магический шар отвечает: {list_slov}")
-        time.sleep(2)
+        time.sleep(3)
         menu(msg)
 
     if action == "book_coffe":
