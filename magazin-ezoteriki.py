@@ -120,7 +120,7 @@ def confirm(msg:Message, action):
 
         if msg.text == "Секретная предсказание(шанс 10%)":
             bot.send_document(msg.chat.id, gif, caption="это твоё будущее")
-            time.sleep(2)
+            time.sleep(3)
             menu(msg)
 
     if action == "glass_square2":
